@@ -1,14 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ManageFiles</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+%html
+%head
+  %title ManageFile | Your life's work!
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+%body
+  %header
+  .header_inner
+    = link_to " ManageFile ", root_path, id: "logo"
 
-  <body>
+    
+
+
+%p.notice= notice
+%p.alert= alert
+
+= yield
+
+
+  %body
     <%= yield %>
-  </body>
-</html>
